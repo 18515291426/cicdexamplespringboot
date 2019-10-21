@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 
@@ -40,6 +42,7 @@ public class HomeController {
 
     @PostMapping("/build")
     public void build(HttpServletRequest httpServletRequest, @RequestBody String body){
+
 //        {"name":"example-springboot","display_name":"example-springboot","url":"job/example-springboot/","build":{"full_url":"http://localhost:8080/job/example-springboot/7/","number":7,"queue_id":7,"timestamp":1569761576042,"phase":"COMPLETED","status":"SUCCESS","url":"job/example-springboot/7/","scm":{"url":"https://github.com/Infaye/cicdexamplespringboot.git","branch":"origin/master","commit":"e530787911aba85fbc97cc89cdf4a12d7a09cebc","changes":[],"culprits":[]},"parameters":{"BUILD_NUMBER":"2019-09-29-01"},"log":"","notes":"","artifacts":{}}}
         System.out.println(httpServletRequest.getAuthType());
     }
@@ -50,6 +53,7 @@ public class HomeController {
     public Boolean create() throws URISyntaxException, IOException {
         JenkinsServer jenkinsServer = new JenkinsServer(new URI("http://localhost:8080/"), "baijinlong",
                 "5568bjl414");
+        List<String> li=new ArrayList<>();
         JobWithDetails jobs = jenkinsServer.getJob("example-springboot");
         jenkinsServer.createJob("jenkinsclientjob","<maven2-moduleset plugin=\"maven-plugin@3.4\">\n" +
                 "  <actions/>\n" +
