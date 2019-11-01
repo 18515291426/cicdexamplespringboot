@@ -12,6 +12,7 @@
          
          
          
+         
 
     <groupId>com.cicdexample.springboot</groupId>
     <artifactId>example-cicd-springboot</artifactId>
@@ -25,6 +26,7 @@
     </modules>
 
 
+         
     <properties>
         <java.version>1.8</java.version>
     </properties>
