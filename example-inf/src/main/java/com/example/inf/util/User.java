@@ -2,7 +2,7 @@ package com.example.inf.util;
 
 /**
  * @program: example-cicd-springboot
- * @description:
+ * @description:test
  * @author: baijinlong
  * @create: 2019-09-25 18:59
  **/
